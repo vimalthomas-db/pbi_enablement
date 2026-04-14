@@ -1,0 +1,152 @@
+Hospital,Hospital Current Display,Metric,Metric Display Projection,Metric Display Current,Entity,Metric Key,Metric Projection Seq,Metric Current Seq,Hospital Seq,Metric Display PD,Entity Display PD,Entity Display Seq,Metric PD Seq,Metric Display Trend,Metric Trend Seq
+,,,,,,0,0,0,1,,,2,13,,13
+WCMC+CMC,WCMC+CMC,Admissions,Admissions,Admissions,WCMC,18,0.5,0.5,2,Admissions,WCMC,5,0.5,Admissions,0.5
+WCMC+CMC,WCMC+CMC,Average Daily Census,Average Daily Census,Average Daily Census,WCMC,1,1,1,2,Average Daily Census,WCMC,5,1,Average Daily Census,1
+WCMC+CMC,WCMC+CMC,Average Length of Stay,Average Length of Stay,Average Length of Stay**,WCMC,4,4,4,2,Average Length of Stay,WCMC,5,4,Average Length of Stay,1.1
+WCMC+CMC,WCMC+CMC,Patient Days,Patient Days,Patient Days*,WCMC,3,3,3,2,Patient Days,WCMC,5,3,Patient Days,3
+WCMC+CMC,WCMC+CMC,Average Length of Stay,Average Length of Stay,Average Length of Stay**,CMC,4,4,4,2,Average Length of Stay,CMC,3,4,Average Length of Stay,1.1
+BHC,BHC,Average Length of Stay,Average Length of Stay**,Average Length of Stay****,BHC,4,5,12,3,Average Length of Stay,BHC,1,4,Average Length of Stay,1.1
+WCMC+CMC,WCMC+CMC,JMH Days,JMH Days,JMH Days,WCMC,21,4.1,4.1,2,JMH Days,WCMC,5,null,JMH Days,1.2
+WCMC+CMC,WCMC+CMC,JMH Days,JMH Days,JMH Days,CMC,21,4.1,4.1,2,JMH Days,CMC,3,null,JMH Days,1.2
+WCMC+CMC,WCMC+CMC,Patient Days,Patient Days,Patient Days*,CMC,3,3,3,2,Patient Days,CMC,3,3,Patient Days,3
+WCMC+CMC,WCMC+CMC,ED Visits,ED Visits,ED Visits,WCMC,7,8,7,2,ED Visits,WCMC,5,8,ED Visits,8
+WCMC+CMC,WCMC+CMC,ED Visits,ED Visits,ED Visits,CMC,7,8,7,2,ED Visits,CMC,3,8,ED Visits,8
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Inpatient,Surgical Procedures - Inpatient,Surgical Procedures - Inpatient,WCMC,8,9,8,2,Surgical Procedures - Inpatient,WCMC,5,9,Surgical Procedures - Inpatient,9
+WCMC+CMC,WCMC+CMC,Admissions,Admissions,Admissions,CMC,18,0.5,0.5,2,Admissions,CMC,3,0.5,Admissions,0.5
+WCMC+CMC,WCMC+CMC,Average Daily Census,Average Daily Census,Average Daily Census,CMC,1,1,1,2,Average Daily Census,CMC,3,1,Average Daily Census,1
+BHC,BHC,JMH Days,JMH Days,JMH Days,BHC,21,4.1,4.1,3,JMH Days,BHC,1,null,JMH Days,1.2
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Inpatient,Surgical Procedures - Inpatient,Surgical Procedures - Inpatient,CMC,8,9,8,2,Surgical Procedures - Inpatient,CMC,3,9,Surgical Procedures - Inpatient,9
+WCMC+CMC,WCMC+CMC,Discharges,Discharges,Discharges*,WCMC,2,2,2,2,Discharges,WCMC,5,2,JMH Discharges,2
+WCMC+CMC,WCMC+CMC,Discharges,Discharges,Discharges*,CMC,2,2,2,2,Discharges,CMC,3,2,JMH Discharges,2
+BHC,BHC,Discharges,Discharges,Discharges,BHC,2,2,10,3,Discharges,BHC,1,2,JMH Discharges,2
+WCMC+CMC,WCMC+CMC,ALOS,ALOS,ALOS,WCMC,15,16,18,2,ALOS,WCMC,5,6,ALOS,6
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Outpatient,Surgical Procedures - Outpatient,Surgical Procedures - Outpatient,WCMC,16,9.5,8.5,2,Surgical Procedures - Outpatient,WCMC,5,9.5,Surgical Procedures - Outpatient,9.5
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Outpatient,Surgical Procedures - Outpatient,Surgical Procedures - Outpatient,CMC,16,9.5,8.5,2,Surgical Procedures - Outpatient,CMC,3,9.5,Surgical Procedures - Outpatient,9.5
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Total,Surgical Procedures - Total,Surgical Procedures - Total,WCMC,17,9.6,8.6,2,Surgical Procedures - Total,WCMC,5,9.6,Surgical Procedures - Total,9.6
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Total,Surgical Procedures - Total,Surgical Procedures - Total,CMC,17,9.6,8.6,2,Surgical Procedures - Total,CMC,3,9.6,Surgical Procedures - Total,9.6
+WCMC+CMC,WCMC+CMC,,,,WCMC,9,10,9,2,,,4,14,,13
+BHC,BHC,Admissions,Admissions,Admissions,BHC,18,0.5,0.5,3,Admissions,BHC,1,0.5,Admissions,0.5
+BHC,BHC,Average Daily Census,Average Daily Census,Average Daily Census,BHC,1,1,1,3,Average Daily Census,BHC,1,1,Average Daily Census,1
+WCMC+CMC,WCMC+CMC,ALOS,ALOS,ALOS,CMC,15,16,18,2,ALOS,CMC,3,6,ALOS,6
+BHC,BHC,Patient Days,Patient Days,Patient Days,BHC,3,3,11,3,Patient Days,BHC,1,3,Patient Days,3
+,,ALOS,Dummy,Dummy,WCMC,15,16,18,null,ALOS*,CMC/WC,11,6,ALOS,6
+BHC,BHC,,,,BHC,10,11,13,3,,,6,15,,13
+PN,PN,Total PN Work RVUs,Total PN Work RVUs,Total PN Work RVUs,PN,11,12,14,4,wRVUs,PN,7,10,Total PN Work RVUs,10
+PN,PN,,,,PN,12,13,15,4,,,8,16,,13
+JMH***,JMH,Gross Charges,Gross Charges,Gross Charges,WCMC,13,14,16,5,Charges,WCMC,5,11,Gross Charges,11
+JMH***,JMH,Gross Charges,Gross Charges,Gross Charges,CMC,13,14,16,5,Charges,CMC,3,11,Gross Charges,11
+JMH***,JMH,Gross Charges,Gross Charges,Gross Charges,BHC,13,14,16,5,Charges,BHC,1,11,Gross Charges,11
+JMH***,JMH,Gross Charges,Gross Charges,Gross Charges,PN,13,14,16,5,Charges,PN,7,11,Gross Charges,11
+JMH***,JMH,Collections,Collections,Collections,WCMC,14,15,17,5,Collections,WCMC,5,12,Collections,12
+JMH***,JMH,Collections,Collections,Collections,CMC,14,15,17,5,Collections,CMC,3,12,Collections,12
+JMH***,JMH,Collections,Collections,Collections,BHC,14,15,17,5,Collections,BHC,1,12,Collections,12
+JMH***,JMH,Collections,Collections,Collections,PN,14,15,17,5,Collections,PN,7,12,Collections,12
+,,Gross Charges,Dummy,Dummy,WCMC,13,16,18,null,Charges in thousands,JMH,9,11,Gross Charges,11
+,,Gross Charges,Dummy,Dummy,CMC,13,16,18,null,Charges in thousands,JMH,9,11,Gross Charges,11
+,,Gross Charges,Dummy,Dummy,BHC,13,16,18,null,Charges in thousands,JMH,9,11,Gross Charges,11
+,,Gross Charges,Dummy,Dummy,PN,13,16,18,null,Charges in thousands,JMH,9,11,Gross Charges,11
+,,Collections,Dummy,Dummy,WCMC,14,16,18,null,Collections in thousands,JMH,9,12,Collections,12
+,,Collections,Dummy,Dummy,CMC,14,16,18,null,Collections in thousands,JMH,9,12,Collections,12
+,,Collections,Dummy,Dummy,BHC,14,16,18,null,Collections in thousands,JMH,9,12,Collections,12
+,,Collections,Dummy,Dummy,PN,14,16,18,null,Collections in thousands,JMH,9,12,Collections,12
+,,ALOS,,,CMC,15,null,null,null,ALOS*,CMC/WC,11,6,ALOS,6
+WCMC+CMC,WCMC+CMC,O/E - ALOS,O/E - ALOS,O/E - ALOS,WCMC,27,0.9,0.9,2,O/E - ALOS,WCMC,5,0.9,O/E - ALOS,6.1
+WCMC+CMC,WCMC+CMC,O/E - ALOS,O/E - ALOS,O/E - ALOS,CMC,27,0.9,0.9,2,O/E - ALOS,CMC,3,0.9,O/E - ALOS,6.1
+,,,Dummy,Dummy,,null,16,18,null,,,10,17,,13
+BHC,BHC,O/E - ALOS,O/E - ALOS,O/E - ALOS,BHC,27,0.9,0.9,3,O/E - ALOS,BHC,1,0.9,O/E - ALOS,6.1
+WCMC+CMC,WCMC+CMC,GMLOS,GMLOS,GMLOS,WCMC,5,6,5,2,GMLOS*,WCMC,5,5,O/E - GMLOS,6.2
+WCMC+CMC,WCMC+CMC,GMLOS,GMLOS,GMLOS,CMC,5,6,5,2,GMLOS*,CMC,3,5,O/E - GMLOS,6.2
+,,GMLOS,Dummy,Dummy,WCMC,5,16,18,null,GMLOS*,CMC/WC,11,5,O/E - GMLOS,6.2
+WCMC+CMC,WCMC+CMC,Deliveries,Deliveries,Deliveries,WCMC,19,9.7,9.7,2,Deliveries,WCMC,5,null,Deliveries,9.7
+WCMC+CMC,WCMC+CMC,Deliveries,Deliveries,Deliveries,CMC,19,9.7,9.7,2,Deliveries,CMC,3,null,Deliveries,9.7
+BHC,BHC,Deliveries,Deliveries,Deliveries,BHC,19,9.7,9.7,3,Deliveries,BHC,1,null,Deliveries,9.7
+PN,PN,Deliveries,Deliveries,Deliveries,PN,19,9.7,9.7,4,Deliveries,PN,7,null,Deliveries,9.7
+WCMC+CMC,WCMC+CMC,Trauma Visits,Trauma Visits,Trauma Visits,WCMC,20,9.8,9.8,2,Trauma Visits,WCMC,5,null,Trauma Visits,9.8
+WCMC+CMC,WCMC+CMC,Trauma Visits,Trauma Visits,Trauma Visits,CMC,20,9.8,9.8,2,Trauma Visits,CMC,3,null,Trauma Visits,9.8
+BHC,BHC,Trauma Visits,Trauma Visits,Trauma Visits,BHC,20,9.8,9.8,3,Trauma Visits,BHC,1,null,Trauma Visits,9.8
+PN,PN,Trauma Visits,Trauma Visits,Trauma Visits,PN,20,9.8,9.8,4,Trauma Visits,PN,7,null,Trauma Visits,9.8
+,,GMLOS,,,CMC,5,null,null,null,GMLOS*,CMC/WC,11,5,O/E - GMLOS,6.2
+,,GMLOS,,,BHC,5,null,null,null,GMLOS*,BHC,1,5,O/E - GMLOS,6.2
+WCMC+CMC,WCMC+CMC,O/E,O/E,O/E***,WCMC,6,7,6,2,O/E*,CMC/WC,11,7,O/E,7
+WCMC+CMC,WCMC+CMC,O/E,O/E,O/E***,CMC,6,7,6,2,O/E*,CMC/WC,11,7,O/E,7
+WCMC+CMC,WCMC+CMC,O/E,O/E,O/E***,WCMC,6,7,6,2,O/E*,WCMC,5,7,O/E,7
+WCMC+CMC,WCMC+CMC,O/E,O/E,O/E***,CMC,6,7,6,2,O/E*,CMC,3,7,O/E,7
+BHC,BHC,O/E,O/E,O/E***,BHC,6,7,6,3,O/E*,BHC,1,7,O/E,7
+WCMC+CMC,WCMC+CMC,CMI,CMI,CMI,WCMC,22,7.1,7.1,2,CMI,WCMC,5,null,CMI,7.1
+WCMC+CMC,WCMC+CMC,CMI,CMI,CMI,CMC,22,7.1,7.1,2,CMI,CMC,3,null,CMI,7.1
+BHC,BHC,CMI,CMI,CMI,BHC,22,7.1,7.1,3,CMI,BHC,1,null,CMI,7.1
+WCMC+CMC,WCMC+CMC,Admissions - ED,Admissions - ED,Admissions - ED,WCMC,24,0.6,0.6,2,Admissions - ED,WCMC,5,0.6,Admissions - ED,0.6
+WCMC+CMC,WCMC+CMC,Admissions - ED,Admissions - ED,Admissions - ED,CMC,24,0.6,0.6,2,Admissions - ED,CMC,3,0.6,Admissions - ED,0.6
+BHC,BHC,Admissions - ED,Admissions - ED,Admissions - ED,BHC,24,0.6,0.6,3,Admissions - ED,BHC,1,0.6,Admissions - ED,0.6
+WCMC+CMC,WCMC+CMC,Admissions - ED%,Admissions - ED%,Admissions - ED%,WCMC,25,0.7,0.7,2,Admissions - ED%,WCMC,5,0.7,Admissions - ED%,0.7
+WCMC+CMC,WCMC+CMC,Admissions - ED%,Admissions - ED%,Admissions - ED%,CMC,25,0.7,0.7,2,Admissions - ED%,CMC,3,0.7,Admissions - ED%,0.7
+BHC,BHC,Admissions - ED%,Admissions - ED%,Admissions - ED%,BHC,25,0.7,0.7,3,Admissions - ED%,BHC,1,0.7,Admissions - ED%,0.7
+WCMC+CMC,WCMC+CMC,Admissions - Newborn,Admissions - Newborn,Admissions - Newborn,WCMC,26,0.8,0.8,2,Admissions - Newborn,WCMC,5,0.8,Admissions - Newborn,0.8
+WCMC+CMC,WCMC+CMC,Admissions - Newborn,Admissions - Newborn,Admissions - Newborn,CMC,26,0.8,0.8,2,Admissions - Newborn,CMC,3,0.8,Admissions - Newborn,0.8
+BHC,BHC,Admissions - Newborn,Admissions - Newborn,Admissions - Newborn,BHC,26,0.8,0.8,3,Admissions - Newborn,BHC,1,0.8,Admissions - Newborn,0.8
+WCMC+CMC,WCMC+CMC,NICU Cases,NICU Cases,NICU Cases,WCMC,23,7.2,7.2,2,NICU Cases,WCMC,5,null,NICU Cases,7.2
+WCMC+CMC,WCMC+CMC,NICU Cases,NICU Cases,NICU Cases,CMC,23,7.2,7.2,2,NICU Cases,CMC,3,null,NICU Cases,7.2
+BHC,BHC,NICU Cases,NICU Cases,NICU Cases,BHC,23,7.2,7.2,3,NICU Cases,BHC,1,null,NICU Cases,7.2
+WCMC+CMC,WCMC+CMC,Observation Days - Inpatient,Observation Days - Inpatient,Observation Days - Inpatient,WCMC,28,3.2,3.2,2,Observation Days - Inpatient,WCMC,5,3.2,Observation Days - Inpatient,3.2
+WCMC+CMC,WCMC+CMC,Observation Days - Inpatient,Observation Days - Inpatient,Observation Days - Inpatient,CMC,28,3.2,3.2,2,Observation Days - Inpatient,CMC,3,3.2,Observation Days - Inpatient,3.2
+BHC,BHC,Observation Days - Inpatient,Observation Days - Inpatient,Observation Days - Inpatient,BHC,28,3.2,3.2,3,Observation Days - Inpatient,BHC,1,3.2,Observation Days - Inpatient,3.2
+PN,PN,Observation Days - Inpatient,Observation Days - Inpatient,Observation Days - Inpatient,PN,28,3.2,3.2,4,Observation Days - Inpatient,PN,7,3.2,Observation Days - Inpatient,3.2
+WCMC+CMC,WCMC+CMC,Observation Days - Outpatient,Observation Days - Outpatient,Observation Days - Outpatient,WCMC,29,3.3,3.3,2,Observation Days - Outpatient,WCMC,5,3.3,Observation Days - Outpatient,3.3
+WCMC+CMC,WCMC+CMC,Observation Days - Outpatient,Observation Days - Outpatient,Observation Days - Outpatient,CMC,29,3.3,3.3,2,Observation Days - Outpatient,CMC,3,3.3,Observation Days - Outpatient,3.3
+BHC,BHC,Observation Days - Outpatient,Observation Days - Outpatient,Observation Days - Outpatient,BHC,29,3.3,3.3,3,Observation Days - Outpatient,BHC,1,3.3,Observation Days - Outpatient,3.3
+PN,PN,Observation Days - Outpatient,Observation Days - Outpatient,Observation Days - Outpatient,PN,29,3.3,3.3,4,Observation Days - Outpatient,PN,7,3.3,Observation Days - Outpatient,3.3
+WCMC+CMC,WCMC+CMC,Observation Days - Total,Observation Days - Total,Observation Days - Total,WCMC,30,3.4,3.4,2,Observation Days - Total,WCMC,5,3.4,Observation Days - Total,3.4
+WCMC+CMC,WCMC+CMC,Observation Days - Total,Observation Days - Total,Observation Days - Total,CMC,30,3.4,3.4,2,Observation Days - Total,CMC,3,3.4,Observation Days - Total,3.4
+BHC,BHC,Observation Days - Total,Observation Days - Total,Observation Days - Total,BHC,30,3.4,3.4,3,Observation Days - Total,BHC,1,3.4,Observation Days - Total,3.4
+PN,PN,Observation Days - Total,Observation Days - Total,Observation Days - Total,PN,30,3.4,3.4,4,Observation Days - Total,PN,7,3.4,Observation Days - Total,3.4
+WCMC+CMC,WCMC+CMC,Observation Cases - Inpatient,Observation Cases - Inpatient,Observation Cases - Inpatient,WCMC,31,2.2,2.2,2,Observation Cases - Inpatient,WCMC,5,2.2,Observation Cases - Inpatient,2.2
+WCMC+CMC,WCMC+CMC,Observation Cases - Inpatient,Observation Cases - Inpatient,Observation Cases - Inpatient,CMC,31,2.2,2.2,2,Observation Cases - Inpatient,CMC,3,2.2,Observation Cases - Inpatient,2.2
+BHC,BHC,Observation Cases - Inpatient,Observation Cases - Inpatient,Observation Cases - Inpatient,BHC,31,2.2,2.2,3,Observation Cases - Inpatient,BHC,1,2.2,Observation Cases - Inpatient,2.2
+WCMC+CMC,WCMC+CMC,Observation Cases - Outpatient,Observation Cases - Outpatient,Observation Cases - Outpatient,WCMC,32,2.3,2.3,2,Observation Cases - Outpatient,WCMC,5,2.3,Observation Cases - Outpatient,2.3
+WCMC+CMC,WCMC+CMC,Observation Cases - Outpatient,Observation Cases - Outpatient,Observation Cases - Outpatient,CMC,32,2.3,2.3,2,Observation Cases - Outpatient,CMC,3,2.3,Observation Cases - Outpatient,2.3
+BHC,BHC,Observation Cases - Outpatient,Observation Cases - Outpatient,Observation Cases - Outpatient,BHC,32,2.3,2.3,3,Observation Cases - Outpatient,BHC,1,2.3,Observation Cases - Outpatient,2.3
+WCMC+CMC,WCMC+CMC,Observation Cases - Total,Observation Cases - Total,Observation Cases - Total,WCMC,33,2.4,2.4,2,Observation Cases - Total,WCMC,5,2.4,Observation Cases - Total,2.4
+WCMC+CMC,WCMC+CMC,Observation Cases - Total,Observation Cases - Total,Observation Cases - Total,CMC,33,2.4,2.4,2,Observation Cases - Total,CMC,3,2.4,Observation Cases - Total,2.4
+BHC,BHC,Observation Cases - Total,Observation Cases - Total,Observation Cases - Total,BHC,33,2.4,2.4,3,Observation Cases - Total,BHC,1,2.4,Observation Cases - Total,2.4
+WCMC+CMC,WCMC+CMC,Outpatient Cases,Outpatient Cases,Outpatient Cases,WCMC,34,2.5,2.5,2,Outpatient Cases,WCMC,5,2.5,Outpatient Cases,2.5
+WCMC+CMC,WCMC+CMC,Outpatient Cases,Outpatient Cases,Outpatient Cases,CMC,34,2.5,2.5,2,Outpatient Cases,CMC,3,2.5,Outpatient Cases,2.5
+BHC,BHC,Outpatient Cases,Outpatient Cases,Outpatient Cases,BHC,34,2.5,2.5,3,Outpatient Cases,BHC,1,2.5,Outpatient Cases,2.5
+WCMC+CMC,WCMC+CMC,Outpatient Visits,Outpatient Visits,Outpatient Visits,WCMC,35,2.6,2.6,2,Outpatient Visits,WCMC,5,2.6,Outpatient Visits,2.6
+WCMC+CMC,WCMC+CMC,Outpatient Visits,Outpatient Visits,Outpatient Visits,CMC,35,2.6,2.6,2,Outpatient Visits,CMC,3,2.6,Outpatient Visits,2.6
+BHC,BHC,Outpatient Visits,Outpatient Visits,Outpatient Visits,BHC,35,2.6,2.6,3,Outpatient Visits,BHC,1,2.6,Outpatient Visits,2.6
+WCMC+CMC,WCMC+CMC,Admissions,Admissions,Admissions,WCMC,18,0.5,0.5,2,Admissions,CMC/WC,11,0.5,Admissions,0.5
+WCMC+CMC,WCMC+CMC,Admissions,Admissions,Admissions,CMC,18,0.5,0.5,2,Admissions,CMC/WC,11,0.5,Admissions,0.5
+WCMC+CMC,WCMC+CMC,Admissions - ED,Admissions - ED,Admissions - ED,WCMC,24,0.6,0.6,2,Admissions - ED,CMC/WC,11,0.6,Admissions - ED,0.6
+WCMC+CMC,WCMC+CMC,Admissions - ED,Admissions - ED,Admissions - ED,CMC,24,0.6,0.6,2,Admissions - ED,CMC/WC,11,0.6,Admissions - ED,0.6
+WCMC+CMC,WCMC+CMC,Admissions - ED%,Admissions - ED%,Admissions - ED%,WCMC,25,0.7,0.7,2,Admissions - ED%,CMC/WC,11,0.7,Admissions - ED%,0.7
+WCMC+CMC,WCMC+CMC,Admissions - ED%,Admissions - ED%,Admissions - ED%,CMC,25,0.7,0.7,2,Admissions - ED%,CMC/WC,11,0.7,Admissions - ED%,0.7
+WCMC+CMC,WCMC+CMC,Patient Days,Patient Days,Patient Days*,WCMC,3,3,3,2,Patient Days,CMC/WC,11,3,Patient Days,3
+WCMC+CMC,WCMC+CMC,Patient Days,Patient Days,Patient Days*,CMC,3,3,3,2,Patient Days,CMC/WC,11,3,Patient Days,3
+WCMC+CMC,WCMC+CMC,ED Visits,ED Visits,ED Visits,WCMC,7,8,7,2,ED Visits,CMC/WC,11,8,ED Visits,8
+WCMC+CMC,WCMC+CMC,ED Visits,ED Visits,ED Visits,CMC,7,8,7,2,ED Visits,CMC/WC,11,8,ED Visits,8
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Inpatient,Surgical Procedures - Inpatient,Surgical Procedures - Inpatient,WCMC,8,9,8,2,Surgical Procedures - Inpatient,CMC/WC,11,9,Surgical Procedures - Inpatient,9
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Inpatient,Surgical Procedures - Inpatient,Surgical Procedures - Inpatient,CMC,8,9,8,2,Surgical Procedures - Inpatient,CMC/WC,11,9,Surgical Procedures - Inpatient,9
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Outpatient,Surgical Procedures - Outpatient,Surgical Procedures - Outpatient,WCMC,16,9.5,8.5,2,Surgical Procedures - Outpatient,CMC/WC,11,9.5,Surgical Procedures - Outpatient,9.5
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Outpatient,Surgical Procedures - Outpatient,Surgical Procedures - Outpatient,CMC,16,9.5,8.5,2,Surgical Procedures - Outpatient,CMC/WC,11,9.5,Surgical Procedures - Outpatient,9.5
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Total,Surgical Procedures - Total,Surgical Procedures - Total,WCMC,17,9.6,8.6,2,Surgical Procedures - Total,CMC/WC,11,9.6,Surgical Procedures - Total,9.6
+WCMC+CMC,WCMC+CMC,Surgical Procedures - Total,Surgical Procedures - Total,Surgical Procedures - Total,CMC,17,9.6,8.6,2,Surgical Procedures - Total,CMC/WC,11,9.6,Surgical Procedures - Total,9.6
+WCMC+CMC,WCMC+CMC,Average Length of Stay,Average Length of Stay,Average Length of Stay**,WCMC,4,4,4,2,Average Length of Stay,CMC/WC,11,4,Average Length of Stay,1.1
+WCMC+CMC,WCMC+CMC,Average Length of Stay,Average Length of Stay,Average Length of Stay**,CMC,4,4,4,2,Average Length of Stay,CMC/WC,11,4,Average Length of Stay,1.1
+WCMC+CMC,WCMC+CMC,JMH Days,JMH Days,JMH Days,WCMC,21,4.1,4.1,2,JMH Days,CMC/WC,11,null,JMH Days,1.2
+WCMC+CMC,WCMC+CMC,JMH Days,JMH Days,JMH Days,CMC,21,4.1,4.1,2,JMH Days,CMC/WC,11,null,JMH Days,1.2
+WCMC+CMC,WCMC+CMC,Discharges,Discharges,Discharges*,WCMC,2,2,2,2,Discharges,CMC/WC,11,2,JMH Discharges,2
+WCMC+CMC,WCMC+CMC,Discharges,Discharges,Discharges*,CMC,2,2,2,2,Discharges,CMC/WC,11,2,JMH Discharges,2
+WCMC+CMC,WCMC+CMC,O/E,O/E,O/E***,WCMC,6,7,6,2,O/E*,CMC/WC,11,7,O/E,7
+WCMC+CMC,WCMC+CMC,O/E,O/E,O/E***,CMC,6,7,6,2,O/E*,CMC/WC,11,7,O/E,7
+WCMC+CMC,WCMC+CMC,CMI,CMI,CMI,WCMC,22,7.1,7.1,2,CMI,CMC/WC,11,null,CMI,7.1
+WCMC+CMC,WCMC+CMC,CMI,CMI,CMI,CMC,22,7.1,7.1,2,CMI,CMC/WC,11,null,CMI,7.1
+WCMC+CMC,WCMC+CMC,Observation Cases - Inpatient,Observation Cases - Inpatient,Observation Cases - Inpatient,WCMC,31,2.2,2.2,2,Observation Cases - Inpatient,CMC/WC,11,2.2,Observation Cases - Inpatient,2.2
+WCMC+CMC,WCMC+CMC,Observation Cases - Inpatient,Observation Cases - Inpatient,Observation Cases - Inpatient,CMC,31,2.2,2.2,2,Observation Cases - Inpatient,CMC/WC,11,2.2,Observation Cases - Inpatient,2.2
+WCMC+CMC,WCMC+CMC,Observation Cases - Outpatient,Observation Cases - Outpatient,Observation Cases - Outpatient,WCMC,32,2.3,2.3,2,Observation Cases - Outpatient,CMC/WC,11,2.3,Observation Cases - Outpatient,2.3
+WCMC+CMC,WCMC+CMC,Observation Cases - Outpatient,Observation Cases - Outpatient,Observation Cases - Outpatient,CMC,32,2.3,2.3,2,Observation Cases - Outpatient,CMC/WC,11,2.3,Observation Cases - Outpatient,2.3
+WCMC+CMC,WCMC+CMC,Observation Cases - Total,Observation Cases - Total,Observation Cases - Total,WCMC,33,2.4,2.4,2,Observation Cases - Total,CMC/WC,11,2.4,Observation Cases - Total,2.4
+WCMC+CMC,WCMC+CMC,Observation Cases - Total,Observation Cases - Total,Observation Cases - Total,CMC,33,2.4,2.4,2,Observation Cases - Total,CMC/WC,11,2.4,Observation Cases - Total,2.4
+WCMC+CMC,WCMC+CMC,Outpatient Cases,Outpatient Cases,Outpatient Cases,WCMC,34,2.5,2.5,2,Outpatient Cases,CMC/WC,11,2.5,Outpatient Cases,2.5
+WCMC+CMC,WCMC+CMC,Outpatient Cases,Outpatient Cases,Outpatient Cases,CMC,34,2.5,2.5,2,Outpatient Cases,CMC/WC,11,2.5,Outpatient Cases,2.5
+WCMC+CMC,WCMC+CMC,Outpatient Visits,Outpatient Visits,Outpatient Visits,WCMC,35,2.6,2.6,2,Outpatient Visits,CMC/WC,11,2.6,Outpatient Visits,2.6
+WCMC+CMC,WCMC+CMC,Outpatient Visits,Outpatient Visits,Outpatient Visits,CMC,35,2.6,2.6,2,Outpatient Visits,CMC/WC,11,2.6,Outpatient Visits,2.6

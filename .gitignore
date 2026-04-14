@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Unpacked PBIT working dirs (can be re-extracted from .pbit files)
+_pbit_review/
+_vjs_uc_metrics_review/
+
+# Temp files
+*.tmp
+*.bak
+
+# Mermaid rendering artifacts (regenerable)
+mermaid-config.json
+mermaid-styles.css

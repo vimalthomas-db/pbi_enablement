@@ -1,0 +1,975 @@
+{
+  "datasets": [
+    {
+      "name": "ds_sales",
+      "displayName": "Sales Metrics",
+      "queryLines": [
+        "SELECT order_date, order_status, product_name, product_category,\n",
+        "  rep_name, territory, customer_name, customer_segment, region,\n",
+        "  year, quarter, CONCAT(year, ' Q', quarter) as quarter_label,\n",
+        "  MEASURE(`Total Revenue`) as total_revenue,\n",
+        "  MEASURE(`Total Profit`) as total_profit,\n",
+        "  MEASURE(`Order Count`) as order_count,\n",
+        "  MEASURE(`Profit Margin`) as profit_margin,\n",
+        "  MEASURE(`Avg Order Value`) as avg_order_value,\n",
+        "  MEASURE(`Revenue Completed`) as revenue_completed,\n",
+        "  MEASURE(`Total Quantity`) as total_quantity\n",
+        "FROM vjoseph_pbi_demo.pbi_retail_demo.sales_metrics_full\n",
+        "GROUP BY order_date, order_status, product_name, product_category,\n",
+        "  rep_name, territory, customer_name, customer_segment, region, year, quarter"
+      ]
+    },
+    {
+      "name": "ds_support",
+      "displayName": "Support Metrics",
+      "queryLines": [
+        "SELECT created_at, priority, status,\n",
+        "  MEASURE(`Ticket Count`) as ticket_count,\n",
+        "  MEASURE(`Avg Resolution Hours`) as avg_resolution_hours,\n",
+        "  MEASURE(`Avg CSAT`) as avg_csat,\n",
+        "  MEASURE(`Open Tickets`) as open_tickets\n",
+        "FROM vjoseph_pbi_demo.pbi_retail_demo.support_metrics\n",
+        "GROUP BY created_at, priority, status"
+      ]
+    },
+    {
+      "name": "ds_support_detail",
+      "displayName": "Support Ticket Details",
+      "queryLines": [
+        "SELECT ticket_id, customer_name, priority, status,\n",
+        "  issue_description, resolution_hours, csat_score, created_at\n",
+        "FROM vjoseph_pbi_demo.pbi_retail_demo.vw_support_detail\n",
+        "ORDER BY created_at DESC"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "pg_exec",
+      "displayName": "Executive Summary",
+      "layout": [
+        {
+          "widget": {
+            "name": "c_rev",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "sum(total_revenue)",
+                      "expression": "SUM(`total_revenue`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showDescription": false,
+                "showTitle": true,
+                "title": "Total Revenue"
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "sum(total_revenue)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "c_prof",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "sum(total_profit)",
+                      "expression": "SUM(`total_profit`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true,
+                "title": "Total Profit"
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "sum(total_profit)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "c_ord",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "sum(order_count)",
+                      "expression": "SUM(`order_count`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true,
+                "title": "Order Count"
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "sum(order_count)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "c_marg",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "sum(profit_margin)",
+                      "expression": "SUM(`profit_margin`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true,
+                "title": "Profit Margin"
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "sum(profit_margin)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "w_line",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "month",
+                      "expression": "DATE_TRUNC('MONTH', `order_date`)"
+                    },
+                    {
+                      "name": "total_revenue",
+                      "expression": "SUM(`total_revenue`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "month",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "Month"
+                },
+                "y": {
+                  "fieldName": "total_revenue",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Total Revenue"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 4,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "w_donut",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "customer_segment",
+                      "expression": "`customer_segment`"
+                    },
+                    {
+                      "name": "total_revenue",
+                      "expression": "SUM(`total_revenue`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "color": {
+                  "fieldName": "customer_segment",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Segment"
+                },
+                "angle": {
+                  "fieldName": "total_revenue",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Revenue"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 2,
+            "width": 2,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "w_bar_cat",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "product_category",
+                      "expression": "`product_category`"
+                    },
+                    {
+                      "name": "total_revenue",
+                      "expression": "SUM(`total_revenue`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "product_category",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Product Category"
+                },
+                "y": {
+                  "fieldName": "total_revenue",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Revenue"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 4,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "w_slicer",
+            "queries": [
+              {
+                "name": "dashboards/01f137acaa3b1d0da45d7e14c72b7509/datasets/01f137b451a11260be975a7848c8479a_year",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "year",
+                      "expression": "`year`"
+                    },
+                    {
+                      "name": "year_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true
+              },
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "year",
+                    "queryName": "dashboards/01f137acaa3b1d0da45d7e14c72b7509/datasets/01f137b451a11260be975a7848c8479a_year"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 6,
+            "width": 2,
+            "height": 4
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "pg_sales",
+      "displayName": "Sales Performance",
+      "layout": [
+        {
+          "widget": {
+            "name": "w_matrix",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "rep_name",
+                      "expression": "`rep_name`"
+                    },
+                    {
+                      "name": "quarter_label",
+                      "expression": "`quarter_label`"
+                    },
+                    {
+                      "name": "sum(total_revenue)",
+                      "expression": "SUM(`total_revenue`)"
+                    },
+                    {
+                      "name": "sum(profit_margin)",
+                      "expression": "SUM(`profit_margin`)"
+                    }
+                  ],
+                  "cubeGroupingSets": {
+                    "sets": [
+                      {
+                        "fieldNames": [
+                          "rep_name"
+                        ]
+                      },
+                      {
+                        "fieldNames": [
+                          "quarter_label"
+                        ]
+                      }
+                    ]
+                  },
+                  "disaggregated": false,
+                  "orders": [
+                    {
+                      "direction": "ASC",
+                      "expression": "`rep_name`"
+                    },
+                    {
+                      "direction": "ASC",
+                      "expression": "`quarter_label`"
+                    }
+                  ]
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pivot",
+              "encodings": {
+                "rows": [
+                  {
+                    "fieldName": "rep_name"
+                  }
+                ],
+                "columns": [
+                  {
+                    "fieldName": "quarter_label"
+                  }
+                ],
+                "cell": {
+                  "type": "multi-cell",
+                  "fields": [
+                    {
+                      "fieldName": "sum(total_revenue)",
+                      "cellType": "text"
+                    },
+                    {
+                      "fieldName": "sum(profit_margin)",
+                      "cellType": "text"
+                    }
+                  ],
+                  "displayAs": "columns"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "w_bar_rep",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "rep_name",
+                      "expression": "`rep_name`"
+                    },
+                    {
+                      "name": "total_revenue",
+                      "expression": "SUM(`total_revenue`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "rep_name",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Sales Rep"
+                },
+                "y": {
+                  "fieldName": "total_revenue",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Revenue"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 4,
+            "width": 3,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "w_scatter",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "region",
+                      "expression": "`region`"
+                    },
+                    {
+                      "name": "order_count",
+                      "expression": "SUM(`order_count`)"
+                    },
+                    {
+                      "name": "avg_ov",
+                      "expression": "AVG(`avg_order_value`)"
+                    },
+                    {
+                      "name": "total_revenue",
+                      "expression": "SUM(`total_revenue`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "scatter",
+              "encodings": {
+                "x": {
+                  "fieldName": "order_count",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Order Count"
+                },
+                "y": {
+                  "fieldName": "avg_ov",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Avg Order Value"
+                },
+                "color": {
+                  "fieldName": "region",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Region"
+                },
+                "size": {
+                  "fieldName": "total_revenue",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Revenue"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 4,
+            "width": 3,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "w_cust_tbl",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_sales",
+                  "fields": [
+                    {
+                      "name": "customer_name",
+                      "expression": "`customer_name`"
+                    },
+                    {
+                      "name": "total_revenue",
+                      "expression": "`total_revenue`"
+                    },
+                    {
+                      "name": "order_count",
+                      "expression": "`order_count`"
+                    },
+                    {
+                      "name": "profit_margin",
+                      "expression": "`profit_margin`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "customer_name"
+                  },
+                  {
+                    "fieldName": "total_revenue"
+                  },
+                  {
+                    "fieldName": "order_count"
+                  },
+                  {
+                    "fieldName": "profit_margin"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 8,
+            "width": 6,
+            "height": 3
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "pg_support",
+      "displayName": "Support Analytics",
+      "layout": [
+        {
+          "widget": {
+            "name": "c_open",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_support",
+                  "fields": [
+                    {
+                      "name": "count(open_tickets)",
+                      "expression": "COUNT(`open_tickets`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true,
+                "title": "Open Tickets"
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(open_tickets)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "c_csat",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_support",
+                  "fields": [
+                    {
+                      "name": "sum(avg_csat)",
+                      "expression": "SUM(`avg_csat`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true,
+                "title": "Avg CSAT"
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "sum(avg_csat)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "c_reshrs",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_support",
+                  "fields": [
+                    {
+                      "name": "sum(avg_resolution_hours)",
+                      "expression": "SUM(`avg_resolution_hours`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "frame": {
+                "showTitle": true,
+                "title": "Avg Resolution Hours"
+              },
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "sum(avg_resolution_hours)"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "w_bar_pri",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_support",
+                  "fields": [
+                    {
+                      "name": "priority",
+                      "expression": "`priority`"
+                    },
+                    {
+                      "name": "ticket_count",
+                      "expression": "SUM(`ticket_count`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "priority",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "Priority"
+                },
+                "y": {
+                  "fieldName": "ticket_count",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Ticket Count"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 3,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "w_col_month",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_support",
+                  "fields": [
+                    {
+                      "name": "month",
+                      "expression": "DATE_TRUNC('MONTH', `created_at`)"
+                    },
+                    {
+                      "name": "ticket_count",
+                      "expression": "SUM(`ticket_count`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "month",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "Month"
+                },
+                "y": {
+                  "fieldName": "ticket_count",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Ticket Count"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 2,
+            "width": 3,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "w_tbl_detail",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ds_support_detail",
+                  "fields": [
+                    {
+                      "name": "ticket_id",
+                      "expression": "`ticket_id`"
+                    },
+                    {
+                      "name": "customer_name",
+                      "expression": "`customer_name`"
+                    },
+                    {
+                      "name": "priority",
+                      "expression": "`priority`"
+                    },
+                    {
+                      "name": "status",
+                      "expression": "`status`"
+                    },
+                    {
+                      "name": "issue_description",
+                      "expression": "`issue_description`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "ticket_id"
+                  },
+                  {
+                    "fieldName": "customer_name"
+                  },
+                  {
+                    "fieldName": "priority"
+                  },
+                  {
+                    "fieldName": "status"
+                  },
+                  {
+                    "fieldName": "issue_description"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 6,
+            "height": 5
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dashboard_id": "01f137acaa3b1d0da45d7e14c72b7509",
+  "display_name": "PBI Retail Demo - Metric Views Dashboard",
+  "workspace": "adb-984752964297111.11.azuredatabricks.net",
+  "warehouse_id": "54e77213da593af3",
+  "warehouse_name": "pbi_demo",
+  "catalog": "vjoseph_pbi_demo",
+  "schema": "pbi_retail_demo",
+  "draft_url": "https://adb-984752964297111.11.azuredatabricks.net/dashboardsv3/01f137acaa3b1d0da45d7e14c72b7509",
+  "published_url": "https://adb-984752964297111.11.azuredatabricks.net/dashboardsv3/01f137acaa3b1d0da45d7e14c72b7509/published",
+  "pages": [
+    {"name": "Executive Summary", "visuals": ["4 KPI cards", "Line chart (monthly revenue)", "Donut (segment)", "Bar (category)", "Year slicer"]},
+    {"name": "Sales Performance", "visuals": ["Rep x Quarter table", "Bar (revenue by rep)", "Scatter (orders vs AOV by region)", "Customer table"]},
+    {"name": "Support Analytics", "visuals": ["3 KPI cards", "Bar (tickets by priority)", "Bar (tickets by month)", "Ticket detail table"]}
+  ],
+  "metric_views_used": [
+    "vjoseph_pbi_demo.pbi_retail_demo.sales_metrics_full",
+    "vjoseph_pbi_demo.pbi_retail_demo.support_metrics"
+  ],
+  "created": "2026-04-13"
+}

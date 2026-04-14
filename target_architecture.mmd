@@ -1,0 +1,45 @@
+flowchart TB
+    subgraph Sources["Source Systems"]
+        S1["Epic / Clinical Systems"]
+    end
+
+    subgraph DBX["Databricks Lakehouse"]
+        subgraph GC["gold_custom  (existing facts)"]
+            F1["fact_financial_admitdate"]
+            F2["fact_financial_discharge"]
+            F3["fact_financial_postdate"]
+            F4["fact_financial_budget"]
+        end
+
+        subgraph GR["gold_reference  (new)"]
+            MC["metric_catalog\n(replaces PBI Metric Table)"]
+            MD["metric_definition\n(replaces PBI Definitions)"]
+            RP["reporting_period\n(date anchor — defined once)"]
+        end
+
+        subgraph MV["SQL Views / Metric Views"]
+            V1["mtd_metrics"]
+            V2["projection_metrics"]
+            V3["variance_metrics"]
+            V4["trend_metrics"]
+        end
+    end
+
+    subgraph UC["Unity Catalog"]
+        MViews["Databricks Metric Views\n(named metrics for Genie)"]
+    end
+
+    subgraph Consumers["Consumers"]
+        PBI["Power BI\n(thin semantic model)"]
+        GN["Genie Rooms"]
+        NB["SQL / Notebooks"]
+    end
+
+    S1 --> GC
+    GC --> MV
+    GR --> MV
+    RP --> MV
+    MV --> MViews
+    MViews --> PBI
+    MViews --> GN
+    MViews --> NB
