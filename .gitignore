@@ -8,7 +8,7 @@ _vjs_uc_metrics_review/
 
 # Private PBIT files and analysis
 pbit_analysis/
-Key Financial Metrics Dashboard.pbit
+*.pbit
 
 # Python
 __pycache__/
