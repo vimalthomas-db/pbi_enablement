@@ -6,6 +6,10 @@ Thumbs.db
 _pbit_review/
 _vjs_uc_metrics_review/
 
+# Python
+__pycache__/
+*.pyc
+
 # Temp files
 *.tmp
 *.bak
